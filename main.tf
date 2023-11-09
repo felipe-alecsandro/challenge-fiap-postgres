@@ -1,3 +1,13 @@
+terraform {
+  cloud {
+    organization = "challenge-fiap"
+
+    workspaces {
+      name = "challenge-terraform-github-actions"
+    }
+  }
+}
+
 module "vpc" {
   source   = "./modules/vpc"
   app_name = "challenge-fiap"
