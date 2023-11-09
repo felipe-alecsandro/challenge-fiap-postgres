@@ -36,9 +36,6 @@ jobs:
       - name: Terraform Plan
         run: terraform plan -input=false
 
-      - name: PrintReaf name
-        run: echo "##[set-output name=branch;]${GITHUB_REF#refs/heads/}
-
       - name: Terraform Apply
-        if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve -input=false
