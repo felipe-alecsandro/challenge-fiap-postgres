@@ -1,3 +1,29 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "4.52.0"
+    }
+    random = {
+      source  = "hashicorp/random"
+      version = "3.4.3"
+    }
+  }
+  required_version = ">= 1.1.0"
+
+  cloud {
+    organization = "challenge-fiap"
+
+    workspaces {
+      name = "challenge-terraform-github-actions"
+    }
+  }
+}
+
+provider "aws" {
+  region = "us-east-1"
+}
+
 module "vpc" {
   source   = "./modules/vpc"
   app_name = "challenge-fiap"
