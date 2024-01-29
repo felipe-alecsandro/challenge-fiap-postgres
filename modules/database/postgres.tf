@@ -16,7 +16,6 @@ resource "aws_db_instance" "db_postgres" {
   vpc_security_group_ids       = var.vpc_security_group_ids
   instance_class               = var.db_instance_class
   db_name                      = replace(var.db_name, "-", "")
-  name                         = replace(var.db_name, "-", "")
   username                     = replace(var.db_username, "-", "")
   password                     = var.db_password
   identifier                   = replace(var.db_identifier, "-", "")
