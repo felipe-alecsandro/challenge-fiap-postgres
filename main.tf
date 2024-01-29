@@ -1,7 +1,6 @@
 terraform {
   cloud {
     organization = "challenge-fiap"
-
     workspaces {
       name = "challenge-terraform-github-actions"
     }
